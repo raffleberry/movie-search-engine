@@ -1,0 +1,22 @@
+{
+  "name": "movie_search",
+  "version": "0.0.1",
+  "description": "search engine for movies powered by OMDB api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "movie",
+    "search",
+    "api"
+  ],
+  "author": "Debadutta Padhial",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}
