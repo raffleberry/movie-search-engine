@@ -1,6 +1,66 @@
-<h1>Results:</h1>
-
-<% data["Search"].forEach(function(movie) { %>
-  <li><strong><%= movie["Title"]%></strong> <em> - <%= movie["Year"]%></em></li>
-<%});%>
-<a href="/">search again</a>
+<% include partials/functions %>
+<% include partials/header %>
+  <div class="centered text-center" margin-top="50%" margin-bottom="50%">
+    <h1>Results:</h1>
+  </div>
+  <div class="centered">
+    <% data["Search"].forEach(function(movie, index) { %>
+    <div class="container set-item-width item-viewport blackfonts">
+      <div class="row">
+        <div class="col-4">
+          <% var image = movie["Poster"]; %>
+          <% if (image === "N/A") image = "img/NA.jpg"; %>
+          <img src="<%= image %>" class="img-thumbnail"></img>
+        </div>
+        <div class="col-8">
+          <div class="row mb-4">
+          	<div class="container">
+	            <strong><%= movie["Title"]%></strong> &nbsp<em>(<%= tvOrMovie(movie["Type"], movie["Year"]) %>)</em>
+          	</div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-6 ">
+            	<strong>Genre:</strong> <%= details[index].Genre %>
+            </div>
+            <div class="col-6">
+            	<strong>Duration: </strong> <%= minutesToHours(Number(details[index].Runtime.split(' ', 1))) %>
+            </div>
+          </div>
+          <div class="row mb-4">
+          	<div class="container">
+	            <strong>Plot: </strong> <%= details[index].Plot %>
+          	</div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-4">
+            	<strong>Language: </strong> <%= details[index].Language%>
+            </div>
+            <div class="col-4">
+            	<strong>Country: </strong> <%= details[index].Country%>
+            </div>
+            <div class="col-4">
+            	<strong>Date: </strong> <%= details[index].Released%>
+            </div>
+            <div class="col-4">
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-4">
+            	<strong>IMDB: </strong> <%= details[index].imdbRating%>/10
+            </div>
+            <div class="col-4 ">
+            	<strong>Metacritic: </strong> <%= details[index].Metascore%>/100
+            </div>
+            <div class="col-4 ">
+            	<strong>Type: </strong> <%= details[index].Type%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%});%>
+  </div>
+  <div class = "centered text-center mb-4">
+    <a class="btn btn-warning" href="/" role="button"> Search Again </a>
+  </div>
+<% include partials/footer %>

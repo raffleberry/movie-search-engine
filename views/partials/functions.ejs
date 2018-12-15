@@ -1,0 +1,30 @@
+<%
+tvOrMovie = function(What, Year) {
+  if (What.toLowerCase() === "series")
+    if (Year[Year.length - 1] == '–')
+      return Year + "ongoing";
+  return Year;
+}
+%>
+
+<%
+minutesToHours = function(Minutes) {
+  var hours = Math.floor(Minutes / 60);
+  var minutes = Minutes % 60;
+  if (hours === 0)
+    return Minutes + " minutes";
+  else if (minutes == 0)
+    return hours.toString() + "hr ";
+  else
+    return hours.toString() + "hr " + minutes.toString() + " minutes";
+}
+%>
+
+<%
+  ok = function(something) {
+    if (somethings != undefined)
+      return something;
+    else
+      return "N/A";
+  }
+%>
