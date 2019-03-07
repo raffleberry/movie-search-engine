@@ -1,15 +1,18 @@
 <% include partials/header %>
-  <body>
-    <div class="jumbotron centered text-center" style="padding-bottom: 20%">
-      <div class="container">
-        <div>
-          <span id="logo" class="display-2">MOVIE</span><br>
-          <span id="bottomline">search engine</span>
-        </div>
-          <form action="/results" method="GET">
-            <input class="form-control my-2 inp centered" name="search" type="text" placeholder="Enter movie title">
-            <button type="submit" class="btn btn-light">Submit</button>
-          </form>
-      </div>
+<div class="jumbotron centered text-center" style="padding-bottom: 20%">
+  <div>
+    <span id="logo" class="display-2">MOVIE</span><br>
+    <span id="bottomline">search engine</span>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-sm-1"></div>
+    <div class="col-lg-6 col-sm-10">
+      <form action="/results" method="GET">
+        <input class="form-control inp" name="search" type="text" placeholder="Enter movie title">
+        <div class="inp"><button type="submit" class="btn btn-light">Submit</button></div>
+      </form>
     </div>
+    <div class="col-lg-3 col-sm-1"></div>
+  </div>
+</div>
 <% include partials/footer %>
