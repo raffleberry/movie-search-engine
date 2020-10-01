@@ -6,6 +6,7 @@ A simple movie search engine using OMDB api.
 - [x] Added movie details.
 - [ ] Implement multiple page results.
 - [ ] Update this list with more stuff.
+- [ ] Show matching movie names in search (autocomplete feature)
 
 ### subjective goals :
 - [ ] Make UI more responsive.
